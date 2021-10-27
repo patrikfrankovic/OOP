@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DZ1"
+    "\\DZ1",
+    "\\DZ1\\Forecast",
+    "\\DZ1\\UI"
   ],
-  "SelectedNode": "\\DZ1\\dz1.sln",
+  "SelectedNode": "\\DZ1\\DZ1.sln",
   "PreviewInSolutionExplorer": false
 }
