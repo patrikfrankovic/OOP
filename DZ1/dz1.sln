@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dz1", "dz1\dz1.csproj", "{1B9E057A-8BF2-428D-B09B-209E2F64F406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "dz1\UI.csproj", "{1B9E057A-8BF2-428D-B09B-209E2F64F406}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AB7609EF-C59D-4DA4-BD3C-033CE4F5BD7E} = {AB7609EF-C59D-4DA4-BD3C-033CE4F5BD7E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecast", "Forecast\Forecast.csproj", "{AB7609EF-C59D-4DA4-BD3C-033CE4F5BD7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{1B9E057A-8BF2-428D-B09B-209E2F64F406}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B9E057A-8BF2-428D-B09B-209E2F64F406}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B9E057A-8BF2-428D-B09B-209E2F64F406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB7609EF-C59D-4DA4-BD3C-033CE4F5BD7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB7609EF-C59D-4DA4-BD3C-033CE4F5BD7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB7609EF-C59D-4DA4-BD3C-033CE4F5BD7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB7609EF-C59D-4DA4-BD3C-033CE4F5BD7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
