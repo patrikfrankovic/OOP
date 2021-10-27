@@ -37,25 +37,8 @@ namespace dz1
 
         public double CalculateWindChill()
         {
-            if (windSpeed < 4.8)return 0;
-            if (temperature > 10) return 0;
+            if (windSpeed < 4.8 || temperature >= 10) return 0;
             return 13.12 + 0.6215* temperature - 11.37*Math.Pow(windSpeed, 0.16) + 0.3965* temperature * Math.Pow(windSpeed, 0.16);
         }
-        public static Weather FindWeatherWithLargestWindchill(Weather[] weathers)
-        {
-            Weather windWeather = new Weather();
-            double start = weathers[0].CalculateWindChill();
-            double eachNum;
-            for (int i = 0; i < weathers.Length; i++)
-            {
-                eachNum = weathers[i].CalculateWindChill();
-                if (start < eachNum)
-                {
-                    windWeather = weathers[i];
-                }
-            }
-            return windWeather;
-        }
-
     }
 }
