@@ -1,12 +1,12 @@
 ﻿using System;
+using Forecast;
 
-namespace dz1
+namespace UI
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             Weather current = new Weather();
             current.SetTemperature(24.12);
             current.SetWindSpeed(3.5);
