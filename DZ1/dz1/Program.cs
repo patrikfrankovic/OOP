@@ -1,7 +1,6 @@
 ﻿using System;
-using Forecast;
 
-namespace UI
+namespace dz1
 {
     class Program
     {
