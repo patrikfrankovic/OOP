@@ -23,7 +23,7 @@ namespace Forecast
             this.windSpeed = windSpeed;
         }
 
-        public Weather() { }
+        public Weather():  this (0, 0, 0) { }
 
         public double CalculateFeelsLikeTemperature()
         {
