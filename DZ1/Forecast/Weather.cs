@@ -4,9 +4,9 @@ namespace Forecast
 {
     public class Weather
     {
-        public double temperature;
-        public double windSpeed;
-        public double humidity;
+        double temperature;
+        double windSpeed;
+        double humidity;
 
         public void SetTemperature(double temperature) { this.temperature = temperature; }
         public void SetWindSpeed(double windSpeed) { this.windSpeed = windSpeed; }

@@ -35,7 +35,6 @@ namespace UI
                 largestWindchill.GetHumidity() + ", " + largestWindchill.GetWindSpeed()
             );
         }
-
         public static Weather FindWeatherWithLargestWindchill(Weather[] weathers)
         {
             Weather windWeather = new Weather();
