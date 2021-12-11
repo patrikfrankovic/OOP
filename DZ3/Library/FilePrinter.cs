@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Threading.Tasks;
+using Forecast;
 
-namespace Library
+namespace Printer
 {
     public class FilePrinter : IPrinter
     {

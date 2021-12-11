@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Library
+namespace Forecast
 {
     public class Weather
     {

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Printer;
 
-namespace Library
+namespace Forecast
 {
     public class ForecastUtilities
     {

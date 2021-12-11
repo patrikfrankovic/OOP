@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Library
+namespace Generator
 {
     public class UniformGenerator : IRandomGenerator
     {

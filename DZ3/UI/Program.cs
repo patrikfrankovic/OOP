@@ -1,5 +1,7 @@
 ﻿using System;
-using Library;
+using Forecast;
+using Printer;
+using Generator;
 
 namespace UI
 {
