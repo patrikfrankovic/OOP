@@ -22,7 +22,6 @@
         </Grid.ColumnDefinitions>
         <TextBox Name="cityName" Grid.Column="0" Grid.Row="0" Text="" Margin="300,10,185,10" />
         <TextBlock Name="citylable" IsHitTestVisible="False" Grid.Column="0" Grid.Row="0" FontSize="15" Text="Enter city name:"  Margin="175,10,505,10" />
-        <TextBlock Name="capsWarning" IsHitTestVisible="False" Grid.Column="0" Grid.Row="0" FontSize="12" Text="(case sensitive)"  Margin="610,12,80,10" />
         <Button Name="getCurrentForecast" Width="200" Height="20" Grid.Column="0" Grid.Row="1" Content="Get Current Forecast" Margin="0,0,210,0" Click="GetCurrentForecast_Click" />
         <Button Name="get4DaysForecast" Width="200" Height="20" Grid.Column="0" Grid.Row="1" Content="Get Forecast For Next 4 Days" Margin="210,0,0,0" Click="Get4DaysForecast_Click" />
         <Image Name="icon" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" />
