@@ -57,8 +57,8 @@ namespace UI
                     weatherWind.Content = "Wind Speed: "+ response.SelectToken("wind.speed").ToString() + " m/s";
                     weatherDescription.Content = response.SelectToken("weather[0].description").ToString();
                     weatherDate.Content = String.Empty;
-                    forecastRight.Visibility = Visibility.Hidden;
-                    forecastLeft.Visibility = Visibility.Hidden;
+                    dateRight.Visibility = Visibility.Hidden;
+                    dateLeft.Visibility = Visibility.Hidden;
                     this.UpdateLayout();
                 }
                 else if (response.SelectToken("cod").ToString().Equals("429"))
@@ -92,9 +92,9 @@ namespace UI
                     DateTimeOffset date = DateTimeOffset.FromUnixTimeSeconds(time);
                     weatherDate.Content = "Date: " + date.ToString("dd.MM.yyyy");
                     if (dateindex >= 1 && dateindex < 4)
-                        forecastRight.Visibility = Visibility.Visible;
+                        dateRight.Visibility = Visibility.Visible;
                     if (dateindex > 1 && dateindex <= 4)
-                        forecastLeft.Visibility = Visibility.Visible;
+                        dateLeft.Visibility = Visibility.Visible;
                     this.UpdateLayout();
                 }
                 else if (nameresponse.SelectToken("cod").ToString().Equals("429"))
@@ -114,7 +114,7 @@ namespace UI
             {
                 image = new BitmapImage(new Uri("icons/11d.png", UriKind.Relative));
             }
-            else if (weatherId >= 300 && weatherId <= 321 || weatherId >= 520 && weatherId <= 531)
+            else if ((weatherId >= 300 && weatherId <= 321) || (weatherId >= 520 && weatherId <= 531))
             {
                 image = new BitmapImage(new Uri("icons/09d.png", UriKind.Relative));
             }
@@ -122,7 +122,7 @@ namespace UI
             {
                 image = new BitmapImage(new Uri("icons/10d.png", UriKind.Relative));
             }
-            else if (weatherId == 511 || weatherId >= 600 && weatherId <= 622)
+            else if (weatherId == 511 || (weatherId >= 600 && weatherId <= 622))
             {
                 image = new BitmapImage(new Uri("icons/13d.png", UriKind.Relative));
             }
@@ -149,7 +149,7 @@ namespace UI
             icon.Source = image;
         }
 
-        private void forecastRight_Click(object sender, RoutedEventArgs e)
+        private void dateRight_Click(object sender, RoutedEventArgs e)
         {
             if (isCityValid())
             {
@@ -171,9 +171,9 @@ namespace UI
                     long time = long.Parse(response.SelectToken($"daily[{dateindex}].dt").ToString());
                     DateTimeOffset date = DateTimeOffset.FromUnixTimeSeconds(time);
                     weatherDate.Content = "Date: " + date.ToString("dd.MM.yyyy");
-                    forecastLeft.Visibility = Visibility.Visible;
+                    dateLeft.Visibility = Visibility.Visible;
                     if (dateindex >= 4)
-                        forecastRight.Visibility = Visibility.Hidden;
+                        dateRight.Visibility = Visibility.Hidden;
                     this.UpdateLayout();
                 }
                 else if (nameresponse.SelectToken("cod").ToString().Equals("429"))
@@ -186,7 +186,7 @@ namespace UI
         }
     
 
-        private void forecastLeft_Click(object sender, RoutedEventArgs e)
+        private void dateLeft_Click(object sender, RoutedEventArgs e)
         {
             if (isCityValid())
             {
@@ -208,9 +208,9 @@ namespace UI
                     long time = long.Parse(response.SelectToken($"daily[{dateindex}].dt").ToString());
                     DateTimeOffset date = DateTimeOffset.FromUnixTimeSeconds(time);
                     weatherDate.Content = "Date: " + date.ToString("dd.MM.yyyy");
-                    forecastRight.Visibility = Visibility.Visible;
+                    dateRight.Visibility = Visibility.Visible;
                     if (dateindex <= 1)
-                        forecastLeft.Visibility = Visibility.Hidden;
+                        dateLeft.Visibility = Visibility.Hidden;
                     this.UpdateLayout();
 
                 }

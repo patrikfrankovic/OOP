@@ -31,7 +31,7 @@
         <Label Name="weatherWind" Width="200" Height="30" FontSize="15" Grid.Column="0" Grid.Row="5"  HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label Name="weatherDescription" Width="200" Height="30" FontSize="15" Grid.Column="0" Grid.Row="6" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"  />
         <Label Name="weatherDate" Width="200" Height="30" FontSize="15" Grid.Column="0" Grid.Row="7" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"  />
-        <Button Name="forecastRight" Width="30" Height="30" Grid.Column="0" Grid.Row="7" Margin="250,0,0,0" Visibility="Hidden" Content="→" FontSize="15" Click="forecastRight_Click"/>
-        <Button Name="forecastLeft" Width="30" Height="30" Grid.Column="0" Grid.Row="7" Margin="0,0,250,0" Visibility="Hidden" Content="←" FontSize="15" Click="forecastLeft_Click"/>
+        <Button Name="dateRight" Width="30" Height="30" Grid.Column="0" Grid.Row="7" Margin="250,0,0,0" Visibility="Hidden" Content="→" FontSize="15" Click="dateRight_Click"/>
+        <Button Name="dateLeft" Width="30" Height="30" Grid.Column="0" Grid.Row="7" Margin="0,0,250,0" Visibility="Hidden" Content="←" FontSize="15" Click="dateLeft_Click"/>
     </Grid>
 </Window>
