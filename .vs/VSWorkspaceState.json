@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DZ1",
+    "\\DZ1\\Forecast",
+    "\\DZ1\\UI",
+    "\\DZ5",
+    "\\DZ5\\UI"
   ],
-  "SelectedNode": "\\dz1.sln",
+  "SelectedNode": "\\DZ5\\UI\\MainWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }
