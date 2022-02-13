@@ -25,7 +25,7 @@ namespace UI
     public partial class MainWindow : Window
     {
         List<City> cityList = new List<City>();
-        const string API_Key = "77f7dd025d5fc4148cb5b4a356b0418c";
+        const string API_Key = "ENTER YOUR API KEY HERE";
         int dateindex = 1;
         public MainWindow()
         {
