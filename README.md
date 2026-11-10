@@ -1,79 +1,61 @@
-# OOP FERIT Zadaće
+# Object-Oriented Programming — C# Coursework
 
-Početni projekt za rješavanje domaćih zadaća na kolegiju Objektno orijentirano progamiranje na FERIT-u.
+A collection of C#/.NET assignments built around a weather forecasting domain. The exercises progress from basic object-oriented modeling to collections, interfaces, repositories, and a desktop user interface.
 
-## Git
+## Technologies
 
-Git je besplatan sustav otvorenog koda namijenjen distribuiranom upravljanju verzijama izvornog koda. Danas je on standard i podrazumijeva se barem osnovno poznavanje rada s gitom (ili, eventualno, drugim sličnim sustavom) u svim razvojnim timovima na projektima svih veličina. 
+- C#, .NET Core 3.1 (the original target framework)
+- Object-oriented design, classes and properties, interfaces, and collections
+- Windows Presentation Foundation (WPF) for the final desktop application
+- Newtonsoft.Json and the OpenWeatherMap API in the WPF assignment
 
-Kako biste započeli raditi s gitom, potrebno ga je preuzeti i instalirati. To je moguće napraviti na: [Git preuzimanje](https://www.git-scm.com). Iako ga je moguće koristiti i kroz grafičko sučelje, pune mogućnosti i dublje razumijevanje u svakom se slučaju dobivaju njegovom uporabom kroz konzolu. Na windowsima uz instalaciju gita dolazi mogućnost instalacije _git bash_ alata (_shella_) što je svakako preporučeno. Također, zgodno je dodati git bash u kontekstualni izbornik prilikom instalacije kako bi se on pokretao odmah u željenom direktoriju. Nakon instalacije gita, potrebno je podesiti korisničko ime i e-mail adresu, a to se postiže naredbama
-```
-git config --global user.name "YOUR_USERNAME"
-git config --global user.email "your_email_address@example.com"
-```
+## Projects
 
-## Osnove gita
+| Folder | Focus | What it contains |
+| --- | --- | --- |
+| [`DZ1/`](DZ1/) | Classes and methods | A `Weather` class, calculated apparent temperature/wind chill, and a console demonstration. |
+| [`DZ2/`](DZ2/) | Forecast objects and parsing | `DailyForecast`, `WeeklyForecast`, parsing a weekly forecast from a text file, and an indexer. |
+| [`DZ3/`](DZ3/) | Abstraction and interfaces | Weather generators, a weekly forecast, and console/file printer implementations. |
+| [`DZ4/`](DZ4/) | Collections and repositories | A daily forecast repository, custom exception handling, iteration, and copying repository data. |
+| [`DZ5/`](DZ5/) | Desktop application | A WPF weather interface, city lookup, JSON parsing, weather icons, and API-based forecasts. |
 
-Git je moguće rabiti odmah nakon instalacije, a jednostavne upute moguće je pronaći (s obzirom da će se kasnije rabiti Github) na [Git basics](https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/). Osim ovoga, dobar resurs predstavlja i knjiga [Pro git](https://git-scm.com/book/en/v2). Video vodič kolege Leventića dostupan je na [Git video vodič](https://www.youtube.com/watch?v=a0fgOeEpE74&list=PLDKea8VEeLQNtn__lG_TDqwhlGhoutWym).
+Each folder is an **independent Visual Studio solution**. These are successive coursework exercises, not a single unified application.
 
-Kako biste testirali instalaciju i upoznali se s gitom, kreirajte prazan direktorij naziva "Projekt", u njemu korištenjem 
-```
-git init
-```
-inicijalizirajte prazan repozitorij. Zatim, korištenjem
-```
-git status
-```
-provjerite trenutno stanje repozitorija. Trebao bi biti prazan. Ako ga otvorite u file exploreru s uključenim prikazom skrivenih datoteka, onda bi trebao biti vidljiv samo skriveni direktorij .git. U direktoriju "Projekt" kreirajte tekstualnu datoteku "info.txt" s vlastitim imenom i prezimenom zapisanim unutra. Nakon toga, provjerite stanje repozitorija.
+## Running the console projects
 
-Git prati stanje svih datoteka u direktoriju koje nisu ignorirane. Crvenom bojom teksta označene su datoteke koje su izmijenjene (dodane, obrisane, promijenjenog sadržaja). Ono što git omogućuje je kreiranje slike (_snapshota_) cjelokupnog sadržaja direktorija i njene pohrane (stvara se točka u vremenu na koju se moguće vratiti). Da bi točka mogla biti stvorena, datoteke je potrebno dodati u tzv. _staging_ područje. Ovo se postiže naredbom
-```
-git add --all
-git status
-```
+The first four projects target **.NET Core 3.1**, which is out of support. Use a compatible development environment, or migrate the project files before using a current SDK.
 
-Kada su željene datoteke dodane u _staging_ područje, moguće je snimiti sliku naredbom 
+For example, from the repository root:
 
-```
-git commit -m "Initial commit. Added info.txt"
-git status
+```bash
+dotnet run --project DZ1/UI/UI.csproj
 ```
 
-Oznaka -m govori da će uz tu sliku biti naveden i opis koji slijedi iza nje. Ovo je jako korisno jer će olakšati kasnije baratanje slikama. Poruke uvijek trebaju biti smislene!
+Other exercises can be run similarly by replacing `DZ1` with `DZ2`, `DZ3`, or `DZ4`, subject to their required inputs. **DZ2 expects a `weather.forecast` input file**, which is not supplied in this repository.
 
-Kada je slika snimljena, na nju se moguće vratiti bilo kada u kasnijem razvoju programa (postoji i još puno drugih mogućnosti). Da bi se vidjele sve slike moguće je koristiti naredbu
+## WPF application (DZ5)
 
+- Requires **Windows** and a development environment supporting the original WPF target.
+- Open `DZ5/DZ5.sln` in Visual Studio.
+- The source contains an **OpenWeatherMap API-key placeholder** in `DZ5/UI/MainWindow.xaml.cs`; supply your own key to use API features.
+- The app reads `city.list.json` from the working directory, so the file must be accessible at runtime.
+- Its API requests target historical OpenWeatherMap endpoints. Some endpoints or subscriptions may have changed, so live forecasts are **not verified** with current API plans.
+
+## Repository layout
+
+```text
+DZ1/  C# weather model and console application
+DZ2/  Daily/weekly forecasts and file parsing
+DZ3/  Generators, abstractions, and output methods
+DZ4/  Forecast repository and error handling
+DZ5/  WPF weather application and resources
+LICENSE
 ```
-git log
-```
 
+## Scope and limitations
 
-## Github
+This is an **academic coursework archive**, not a supported or production-ready weather service. The solutions have not been modernized to current .NET versions. Original assignment algorithms are retained to reflect the work as submitted.
 
-Iako je i kada se rabi lokalno riječ o alatu s brojnim mogućnostima, git omogućuje podizanje lokalnog repozitorija na udaljene repozitorije. Github je on-line servis koji omogućuje pohranu repozitorija online i lako upravljanje projektima, a bit će korišten za ove vježbe jer besplatno omogućuje privatne projekte.
+## License
 
-Kako bi se mogao koristiti, potrebno je najprije besplatno kreirati račun na [Githubu](www.github.com). 
-
-U ovom trenutku, za probu, pokušajte repozitorij kreiran u prošlom koraku podići na Github u prazan projekt koji ste ondje kreirali. Za pomoć se moguće koristiti [upute](https://www.techrepublic.com/article/how-to-push-a-new-project-to-github/).
-
-## Korištenje projekta
-
-Za rješavanje zadaća napravite _import_ ovog repozitorija [(ovaj koji trenutno gledate, kliknite ovdje na link ako ne znate što sad)](https://github.com/zoricbruno/oop_ferit_zadace). Ovo postižete tako što kreirate novi prazan privatan repozitorij na svom Github računu (nemojte dodavati ni .gitignore , ni readme). Kada ste ga kreirali, idete na _import code_ opciju kako biste inicijalizirali kodom uz drugog projekta. Nalijepite link do repozitorija sa zadaćama. Nakon ovog postupka, VS projekt (*solution*) bi trebao postojati i na Vašem Github računu, ali kao privatan projekt. Tada ga je moguće lokalno klonirati (ili eventualno skinuti kao .zip ili .rar datoteku te započeti s radom, ali pokušajte klonirati). Kada želite spremiti stanje projekta, to radite najprije dodavanjem svih promjena naredbom _add_ i zatim kreiranjem trenutne slike naredbom _commit_. Kada želite podići kod na svoj udaljeni repozitorij, to radite naredbom _push_. 
-
-```
-git push -u origin --all
-```
-Za slučaj da origin ne postoji, morate dodati link do svog repozitorija (možete ga kopirati s githuba, sa stranice projekta) korištenjem naredbi
-```
-git remote add origin "LINK_KOJI_STE_KOPIRALI"
-```
-i nakon toga napraviti _push_.
-
-Nakon što unesete lozinku , repozitorij će biti uploadan i na udaljenom repozitoriju bi trebale biti vidljive promjene.
-
-*NAPOMENE:*
-* Projekt koji kreirate na Githubu mora biti privatan. Javni projekti (repozitoriji) neće biti uvaženi. 
-* Link na repozitorij zalijepit ćete na odgovarajuće mjesto na Merlin stranici kolegija.
-* Nakon isteka roka za predaju zadaće repozitorij ćete prebaciti na javan način pristupa kako bi isti mogao biti ocijenjen.
-* Arhivske datoteke postavljene izravno na Github neće biti razmatrane, nemojte arhivirati kod i postavljati ga tako.
-
+See [LICENSE](LICENSE). The license notice originating with the coursework template has been preserved.

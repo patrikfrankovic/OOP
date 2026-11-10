@@ -1,0 +1,11 @@
+# Visual Studio / .NET build outputs
+.vs/
+**/.vs/
+**/bin/
+**/obj/
+*.user
+*.suo
+*.cache
+*.sqlite
+desktop.ini
+Thumbs.db
